@@ -1,3 +1,42 @@
-[gd_scene format=3 uid="uid://dukp6psh1b2i7"]
+[gd_scene load_steps=4 format=3 uid="uid://dukp6psh1b2i7"]
+
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_2uy71"]
+[ext_resource type="PackedScene" uid="uid://bsjqifhl6hjm8" path="res://Scenes/game_tree.tscn" id="1_58wkc"]
+[ext_resource type="Script" path="res://Scripts/player_camera.gd" id="2_m0ig7"]
 
 [node name="Game" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [-283.0]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_2uy71")
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+script = ExtResource("2_m0ig7")
+
+[node name="GameTrees" type="Node" parent="."]
+
+[node name="GameTree" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(113, 73)
+
+[node name="GameTree2" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-11, 7)
+
+[node name="GameTree3" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-90, -24)
+
+[node name="GameTree4" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-1, 59)
+
+[node name="GameTree5" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-169, 9)
+
+[node name="GameTree6" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(41, -64)
+
+[node name="GameTree7" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-47, -56)
+
+[node name="GameTree8" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(39, -13)
