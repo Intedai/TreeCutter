@@ -6,5 +6,5 @@ var coins = 0
 
 func add_coin():
 	coins += 1
-	# Placeholder for when coins will be shown in the UI
+	# Update coin count on canvas
 	score_label.text = str(coins)
