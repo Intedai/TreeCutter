@@ -1,11 +1,13 @@
 extends Area2D
 
+# HP of the tree
+const TREE_HP = 5
 
 @onready var game_manager = %GameManager
 @onready var hp_sprite = $hp_sprite
 
 # HP for each tree, when reaches 0 tree self destructs
-var HP = 5
+var HP = TREE_HP
 
 func _ready():
 	hp_sprite.frame = 0
@@ -19,6 +21,6 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 		hp_sprite.frame += 1
 		if HP == 0:
 			queue_free()
-			game_manager.add_coin()
+			game_manager.update_currencies()
 			
 

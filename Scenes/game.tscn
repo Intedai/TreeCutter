@@ -4,39 +4,71 @@
 [ext_resource type="PackedScene" uid="uid://bsjqifhl6hjm8" path="res://Scenes/game_tree.tscn" id="1_58wkc"]
 [ext_resource type="FontFile" uid="uid://noucw0mpj33o" path="res://Assets/Fonts/PixelOperator8.ttf" id="1_ch8jl"]
 [ext_resource type="Texture2D" uid="uid://dbk0vaj6btguu" path="res://Assets/Sprites/coin.png" id="1_cqlep"]
-[ext_resource type="Script" path="res://Scripts/game.gd" id="1_q6jg5"]
 [ext_resource type="Script" path="res://Scripts/player_camera.gd" id="2_m0ig7"]
+[ext_resource type="Texture2D" uid="uid://8oeluy4kmus6" path="res://Assets/Sprites/tree_currency.png" id="4_xvc1k"]
 [ext_resource type="PackedScene" uid="uid://bsjwmih70ojvw" path="res://Scenes/mouse_cursor.tscn" id="7_lnvqo"]
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_q6jg5")
 metadata/_edit_horizontal_guides_ = [-283.0]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_2uy71")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+[node name="Coin Currency" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CoinLabel" type="Label" parent="CanvasLayer/Coin Currency"]
 unique_name_in_owner = true
-offset_left = 42.0
-offset_top = 11.5
-offset_right = 103.0
-offset_bottom = 34.5
+layout_mode = 2
+offset_left = 45.5
+offset_top = 14.0
+offset_right = 106.5
+offset_bottom = 37.0
 theme_override_colors/font_color = Color(0.0235294, 0.0235294, 0.0313726, 1)
 theme_override_fonts/font = ExtResource("1_ch8jl")
 text = "0"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_top = -0.5
-offset_right = 40.0
-offset_bottom = 39.5
+[node name="CoinTexture" type="TextureRect" parent="CanvasLayer/Coin Currency"]
+offset_left = 3.5
+offset_top = 2.0
+offset_right = 43.5
+offset_bottom = 42.0
 texture = ExtResource("1_cqlep")
 
-[node name="MouseCursor" parent="CanvasLayer" instance=ExtResource("7_lnvqo")]
+[node name="WoodCurrency" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="GameManager" type="Node" parent="."]
+[node name="WoodLabel" type="Label" parent="CanvasLayer/WoodCurrency"]
 unique_name_in_owner = true
-script = ExtResource("1_2uy71")
+layout_mode = 2
+offset_left = 45.5
+offset_top = 52.5
+offset_right = 106.5
+offset_bottom = 75.5
+theme_override_colors/font_color = Color(0.0235294, 0.0235294, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("1_ch8jl")
+text = "0"
+
+[node name="WoodTexture" type="TextureRect" parent="CanvasLayer/WoodCurrency"]
+offset_left = 3.5
+offset_top = 39.5
+offset_right = 43.5
+offset_bottom = 79.5
+texture = ExtResource("4_xvc1k")
+
+[node name="MouseCursor" parent="CanvasLayer" instance=ExtResource("7_lnvqo")]
+position = Vector2(528.5, 0)
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -46,6 +78,105 @@ script = ExtResource("2_m0ig7")
 
 [node name="GameTree" parent="GameTrees" instance=ExtResource("1_58wkc")]
 position = Vector2(-17, -83)
+
+[node name="GameTree7" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(1, -6)
+
+[node name="GameTree8" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(60, -4)
+
+[node name="GameTree9" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(153, -51)
+
+[node name="GameTree10" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(183, 27)
+
+[node name="GameTree11" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(137, 96)
+
+[node name="GameTree12" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(37, 67)
+
+[node name="GameTree13" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-6, 52)
+
+[node name="GameTree14" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-123, 86)
+
+[node name="GameTree15" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-164, 10)
+
+[node name="GameTree16" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-159, -63)
+
+[node name="GameTree17" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-215, -52)
+
+[node name="GameTree18" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-198, 39)
+
+[node name="GameTree19" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-198, 39)
+
+[node name="GameTree20" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-167, 118)
+
+[node name="GameTree21" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-227, 97)
+
+[node name="GameTree22" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-280, 40)
+
+[node name="GameTree23" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-101, 141)
+
+[node name="GameTree24" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-20, 124)
+
+[node name="GameTree25" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(43, 121)
+
+[node name="GameTree26" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(81, 52)
+
+[node name="GameTree27" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(37, -91)
+
+[node name="GameTree28" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(137, -107)
+
+[node name="GameTree29" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(204, -95)
+
+[node name="GameTree30" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(220, -23)
+
+[node name="GameTree31" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(225, 63)
+
+[node name="GameTree32" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(182, 119)
+
+[node name="GameTree33" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(106, 156)
+
+[node name="GameTree34" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(41, 169)
+
+[node name="GameTree35" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-10, 184)
+
+[node name="GameTree36" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-67, 187)
+
+[node name="GameTree37" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-149, 177)
+
+[node name="GameTree38" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-210, 165)
+
+[node name="GameTree39" parent="GameTrees" instance=ExtResource("1_58wkc")]
+position = Vector2(-210, 165)
 
 [node name="GameTree2" parent="GameTrees" instance=ExtResource("1_58wkc")]
 position = Vector2(-100, -64)
