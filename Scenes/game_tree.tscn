@@ -1,12 +1,60 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsjqifhl6hjm8"]
+[gd_scene load_steps=10 format=3 uid="uid://bsjqifhl6hjm8"]
 
-[ext_resource type="Texture2D" uid="uid://bbguob4gj573y" path="res://Assets/tree.png" id="1_f4w2t"]
+[ext_resource type="Texture2D" uid="uid://bbguob4gj573y" path="res://Assets/Sprites/tree.png" id="1_f4w2t"]
 [ext_resource type="Script" path="res://Scripts/game_tree.gd" id="1_jrhp4"]
+[ext_resource type="Texture2D" uid="uid://b4i7lw5egjq6o" path="res://Assets/Sprites/health.png" id="2_iwxcj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bd75"]
+atlas = ExtResource("2_iwxcj")
+region = Rect2(0, 0, 26, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r32l"]
+atlas = ExtResource("2_iwxcj")
+region = Rect2(26, 0, 26, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clxxn"]
+atlas = ExtResource("2_iwxcj")
+region = Rect2(52, 0, 26, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8sut"]
+atlas = ExtResource("2_iwxcj")
+region = Rect2(78, 0, 26, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dm30n"]
+atlas = ExtResource("2_iwxcj")
+region = Rect2(104, 0, 26, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2r2r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bd75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r32l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clxxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8sut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dm30n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="GameTree" type="Area2D"]
 script = ExtResource("1_jrhp4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="hp_sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -26)
+sprite_frames = SubResource("SpriteFrames_d2r2r")
+
+[node name="tree_sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_f4w2t")
 region_enabled = true
 region_rect = Rect2(1.61153, 1.51814, 29.1371, 46.0438)

@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://bsjwmih70ojvw"]
+
+[ext_resource type="Texture2D" uid="uid://6eh02bb1prsw" path="res://Assets/Sprites/axe.png" id="1_fxsm2"]
+[ext_resource type="Script" path="res://Scripts/mouse_cursor.gd" id="1_n77c8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1xlm"]
+atlas = ExtResource("1_fxsm2")
+region = Rect2(0, 0, 36, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5ktl"]
+atlas = ExtResource("1_fxsm2")
+region = Rect2(0, 0, 36, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oix3h"]
+atlas = ExtResource("1_fxsm2")
+region = Rect2(36, 0, 36, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk2hq"]
+atlas = ExtResource("1_fxsm2")
+region = Rect2(72, 0, 36, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e8dmq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1xlm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5ktl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oix3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk2hq")
+}],
+"loop": true,
+"name": &"use_axe",
+"speed": 10.0
+}]
+
+[node name="MouseCursor" type="Node2D"]
+script = ExtResource("1_n77c8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(10, 18)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_e8dmq")
+animation = &"use_axe"
+autoplay = "idle"
+frame = 2
+frame_progress = 0.85749

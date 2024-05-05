@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dukp6psh1b2i7"]
+[gd_scene load_steps=8 format=3 uid="uid://dukp6psh1b2i7"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_2uy71"]
 [ext_resource type="PackedScene" uid="uid://bsjqifhl6hjm8" path="res://Scenes/game_tree.tscn" id="1_58wkc"]
-[ext_resource type="Texture2D" uid="uid://dbk0vaj6btguu" path="res://Assets/coin.png" id="1_cqlep"]
+[ext_resource type="FontFile" uid="uid://noucw0mpj33o" path="res://Assets/Fonts/PixelOperator8.ttf" id="1_ch8jl"]
+[ext_resource type="Texture2D" uid="uid://dbk0vaj6btguu" path="res://Assets/Sprites/coin.png" id="1_cqlep"]
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_q6jg5"]
 [ext_resource type="Script" path="res://Scripts/player_camera.gd" id="2_m0ig7"]
+[ext_resource type="PackedScene" uid="uid://bsjwmih70ojvw" path="res://Scenes/mouse_cursor.tscn" id="7_lnvqo"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_q6jg5")
 metadata/_edit_horizontal_guides_ = [-283.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -14,11 +18,12 @@ transform = Transform2D(2, 0, 0, 2, 0, 0)
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 41.0
-offset_top = 8.0
-offset_right = 102.0
-offset_bottom = 31.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 42.0
+offset_top = 11.5
+offset_right = 103.0
+offset_bottom = 34.5
+theme_override_colors/font_color = Color(0.0235294, 0.0235294, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("1_ch8jl")
 text = "0"
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
@@ -27,36 +32,32 @@ offset_right = 40.0
 offset_bottom = 39.5
 texture = ExtResource("1_cqlep")
 
+[node name="MouseCursor" parent="CanvasLayer" instance=ExtResource("7_lnvqo")]
+
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_2uy71")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 script = ExtResource("2_m0ig7")
 
 [node name="GameTrees" type="Node" parent="."]
 
 [node name="GameTree" parent="GameTrees" instance=ExtResource("1_58wkc")]
-position = Vector2(113, 73)
+position = Vector2(-17, -83)
 
 [node name="GameTree2" parent="GameTrees" instance=ExtResource("1_58wkc")]
-position = Vector2(-11, 7)
+position = Vector2(-100, -64)
 
 [node name="GameTree3" parent="GameTrees" instance=ExtResource("1_58wkc")]
-position = Vector2(-90, -24)
+position = Vector2(129, 8)
 
 [node name="GameTree4" parent="GameTrees" instance=ExtResource("1_58wkc")]
-position = Vector2(-1, 59)
+position = Vector2(85, -68)
 
 [node name="GameTree5" parent="GameTrees" instance=ExtResource("1_58wkc")]
-position = Vector2(-169, 9)
+position = Vector2(-91, 9)
 
 [node name="GameTree6" parent="GameTrees" instance=ExtResource("1_58wkc")]
-position = Vector2(41, -64)
-
-[node name="GameTree7" parent="GameTrees" instance=ExtResource("1_58wkc")]
-position = Vector2(-47, -56)
-
-[node name="GameTree8" parent="GameTrees" instance=ExtResource("1_58wkc")]
-position = Vector2(39, -13)
+position = Vector2(-50, 82)
