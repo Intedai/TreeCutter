@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlko0aajsyp0i"]
+[gd_scene load_steps=4 format=3 uid="uid://dlko0aajsyp0i"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_ty2v5"]
+[ext_resource type="Theme" uid="uid://bxqckl84ach5l" path="res://Themes/menu_buttons.tres" id="2_6xxfv"]
+[ext_resource type="Texture2D" uid="uid://sqxpg3dg3nro" path="res://Assets/Sprites/main_menu.png" id="2_u2km8"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,7 +13,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ty2v5")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -494.0
+offset_right = 487.0
+offset_bottom = 290.0
+grow_horizontal = 2
+texture = ExtResource("2_u2km8")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,13 +42,22 @@ grow_vertical = 2
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../ExitButton")
-focus_neighbor_right = NodePath("../ExitButton")
+focus_neighbor_bottom = NodePath("../OptionsButton")
+theme = ExtResource("2_6xxfv")
 text = "Start"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../StartButton")
+focus_neighbor_bottom = NodePath("../ExitButton")
+theme = ExtResource("2_6xxfv")
+text = "Options"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-focus_neighbor_top = NodePath("../StartButton")
+focus_neighbor_top = NodePath("../OptionsButton")
 focus_neighbor_bottom = NodePath("../StartButton")
+theme = ExtResource("2_6xxfv")
 text = "Exit"
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

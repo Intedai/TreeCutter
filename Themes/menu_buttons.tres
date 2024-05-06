@@ -1,0 +1,51 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bxqckl84ach5l"]
+
+[ext_resource type="FontFile" uid="uid://noucw0mpj33o" path="res://Assets/Fonts/PixelOperator8.ttf" id="1_tn6mu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83375"]
+content_margin_left = 10.0
+content_margin_top = 11.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.356863, 0.192157, 0.219608, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnk4q"]
+content_margin_left = 10.0
+content_margin_top = 11.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.356863, 0.192157, 0.219608, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_420tp"]
+content_margin_left = 10.0
+content_margin_top = 11.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.556863, 0.321569, 0.321569, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_tn6mu")
+Button/styles/focus = SubResource("StyleBoxFlat_83375")
+Button/styles/hover = SubResource("StyleBoxFlat_cnk4q")
+Button/styles/normal = SubResource("StyleBoxFlat_420tp")
